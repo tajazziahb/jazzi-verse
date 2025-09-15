@@ -47,13 +47,99 @@ body::before {
 canvas#constellation,
 canvas#footer-constellation {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: transparent !important;
+}
+
+/* content above both */
+.hero, .services, .portfolio, .contact, .footer, .about, .navbar {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- cosmic nebula / noise layer --- */
+.bg-sky{
+  position: fixed;
+  inset: 0;
+  z-index: 0;            /* below canvases, above body */
   pointer-events: none;
 }
+
+#constellation{
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: transparent !important;
+}
+
+.footer{
+  position: relative;         /* create containing block */
+  overflow: hidden;           /* hide overflowed stars */
+  z-index: 3;                 /* footer content sits above page BG; children get +1 below */
+}
+
+#footer-constellation{
+  position: absolute !important; /* override earlier 'fixed' */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;                     /* above #constellation (1), below footer text (3) */
+  pointer-events: none;
+  background: transparent !important;
+}
+
+.footer > *{
+  position: relative;
+  z-index: 3;
+}
+
+.hero, .services, .portfolio, .contact, .about, .navbar{
+  position: relative;
+  z-index: 3;
+}
+
+
+/* soft nebula glows */
+.nebula{
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(120px); opacity: .35;
+  opacity: .22;
+  mix-blend-mode: screen;
+  animation: drift 40s ease-in-out infinite alternate;
+}
+
+
+.n1{ top:-20vmax; left:-15vmax;
+  background: radial-gradient(circle at 50% 50%, #107d90 0 30%, transparent 60%);
+}
+.n2{ bottom:-15vmax; right:-10vmax; opacity:.20; animation-duration:55s;
+  background: radial-gradient(circle at 50% 50%, #15ce9a 0 25%, transparent 60%);
+}
+.n3{ top:10vmax; right:35vmax; opacity:.15; animation-duration:70s;
+  background: radial-gradient(circle at 50% 50%, #b47cff 0 20%, transparent 55%);
+}
+
+@keyframes drift{
+  to{ transform: translate3d(10px,-20px,0) scale(1.05); }
+}
+
+/* ultra subtle film-grain/noise */
+.noise{
+  position: absolute;
+  inset: 0;
+  /* if you have /images/noise.png in your project root, use relative path: */
+  background: url('images/noise.png') repeat;
+  opacity: .05;
+  mix-blend-mode: soft-light;
+  background-size: 200px 200px;
+}
+
 
 .navbar {
   position: sticky;
@@ -196,7 +282,7 @@ canvas#footer-constellation {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 5.5rem;
   color: #d4af37;
   text-shadow: 0 0 4px #d4af37aa;
   margin-bottom: 1rem;
@@ -414,7 +500,7 @@ canvas#footer-constellation {
 .ambient-quote {
   margin-top: 1rem;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #c0c0c0;
   opacity: 0.8;
   max-width: 600px;
@@ -650,10 +736,10 @@ canvas#footer-constellation {
 }
 
 .about-content {
-  max-width: 700px;
+  max-width: 830px;
   margin: 0 auto;
-  line-height: 1.8;
-  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 1.2rem;
   margin-top: 2rem;
   /* Adds space between the text and the image */
 }
@@ -830,5 +916,3 @@ canvas#footer-constellation {
 #form-feedback.fade-out {
   opacity: 0;
 }
-
-

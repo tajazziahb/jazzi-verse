@@ -5,11 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JazziVerse</title>
-  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="src/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  
+  <!-- Cosmic background layer -->
+  <div class="bg-sky" aria-hidden="true">
+    <div class="nebula n1"></div>
+    <div class="nebula n2"></div>
+    <div class="nebula n3"></div>
+    <div class="noise"></div>
+  </div>
 
   <canvas id="constellation"></canvas>
 
@@ -24,7 +31,7 @@
 
     </ul>
   </nav>
-  
+
 
   <section class="hero fade-in-up" id="hero">
     <h1 class="hero-title fade-in">Welcome to JazziVerse</h1>
@@ -39,7 +46,7 @@
     <div class="divider-glow"></div>
     <div class="divider-star">&#10022;</div> <!-- ✦ Star symbol -->
   </div>
-  
+
 
   <section class="about fade-in-up" id="about">
     <h2 class="section-title">About Me</h2>
@@ -57,7 +64,7 @@
 
             Let’s bring your next project to life — beautifully and intentionally.
           </p>
-          <p class="about-signature fade-in-up">— Jazzi</p>
+          <p class="about-signature fade-in-up">— Jazzi B.</p>
 
           <a href="#contact" class="cta-button">Let’s Build Something Stellar</a>
         </div>
@@ -68,7 +75,7 @@
     <div class="divider-glow"></div>
     <div class="divider-star">&#10022;</div> <!-- ✦ Star symbol -->
   </div>
-  
+
 
   <section class="services fade-in-up" id="services">
     <h2 class="section-title">What I Offer</h2>
@@ -104,9 +111,9 @@
     <div class="divider-glow"></div>
     <div class="divider-star">&#10022;</div> <!-- ✦ Star symbol -->
   </div>
-  
 
-  <section  class="portfolio-section fade-in-up" id="portfolio">
+
+  <section class="portfolio-section fade-in-up" id="portfolio">
     <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">🪐 Galactic Works</h2>
     <p class="section-sub" style="text-align: center; margin-bottom: 40px;">Explore the constellations of what I’ve
       built in the JazziVerse.</p>
@@ -127,7 +134,8 @@
 
       <div class="project-card">
         <h3 class="project-title">🌌 GitHub Site Clone</h3>
-        <p class="project-desc">A pixel-perfect GitHub login page clone built to sharpen layout accuracy, form styling, and frontend replication skills from scratch.</p>
+        <p class="project-desc">A pixel-perfect GitHub login page clone built to sharpen layout accuracy, form styling,
+          and frontend replication skills from scratch.</p>
         <a href="https://d6-ghclone.onrender.com/" target="_blank" class="project-link">View Project</a>
       </div>
     </div>
@@ -142,7 +150,8 @@
     <h2 class="section-title">✨ What Others Say</h2>
     <div class="testimonial-row">
       <div class="testimonial-card">
-        <p>“From start to finish, they translated my scattered ideas into a seamless experience. I felt seen, heard, and creatively supported every step of the way.”</p>
+        <p>“From start to finish, they translated my scattered ideas into a seamless experience. I felt seen, heard, and
+          creatively supported every step of the way.”</p>
         <span class="testimonial-author">✦ Independent Artist</span>
       </div>
       <div class="testimonial-card">
@@ -150,18 +159,19 @@
         <span class="testimonial-author">✦ Boutique Brand Owner</span>
       </div>
       <div class="testimonial-card">
-        <p>“Working with JazziVerse felt like a collaboration across galaxies — purposeful, inspired, and full of creative momentum.”</p>
+        <p>“Working with JazziVerse felt like a collaboration across galaxies — purposeful, inspired, and full of
+          creative momentum.”</p>
         <span class="testimonial-author">✦ Startup Co-Founder</span>
       </div>
     </div>
   </section>
-  
-  
+
+
   <div class="section-divider fade-in-up">
     <div class="divider-glow"></div>
     <div class="divider-star">&#10022;</div> <!-- ✦ Star symbol -->
   </div>
-  
+
   <section class="contact fade-in-up" id="contact">
     <h2 class="section-title">Let’s Connect</h2>
     <form class="contact-form" id="contact-form">
@@ -220,30 +230,31 @@
     });
   </script>
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
 
-    window.addEventListener("scroll", () => {
-      let current = "";
+      window.addEventListener("scroll", () => {
+        let current = "";
 
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-          current = section.getAttribute("id");
-        }
-      });
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (pageYOffset >= sectionTop - sectionHeight / 3) {
+            current = section.getAttribute("id");
+          }
+        });
 
-      navLinks.forEach(link => {
-        link.classList.remove("active-link");
-        if (link.getAttribute("href").includes(current)) {
-          link.classList.add("active-link");
-        }
+        navLinks.forEach(link => {
+          link.classList.remove("active-link");
+          if (link.getAttribute("href").includes(current)) {
+            link.classList.add("active-link");
+          }
+        });
       });
     });
-  });
-</script>
-<script type="module" src="/src/main.js"></script>
+  </script>
+  <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>

@@ -282,7 +282,7 @@ canvas#footer-constellation {
 }
 
 .hero-title {
-  font-size: 5.5rem;
+  font-size: 5rem;
   color: #d4af37;
   text-shadow: 0 0 4px #d4af37aa;
   margin-bottom: 1rem;
@@ -317,6 +317,10 @@ canvas#footer-constellation {
   margin-bottom: 3rem;
   text-shadow: 0 0 4px #d4af37aa;
   text-align: center;
+}
+
+.section-sub {
+  font-family: 'Lora', serif; 
 }
 
 .services,
@@ -357,8 +361,8 @@ canvas#footer-constellation {
 
 .service-card:hover,
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
 }
 
 .service-card h3,
@@ -368,11 +372,44 @@ canvas#footer-constellation {
   margin-bottom: 0.5rem;
 }
 
+.service-card h3 {
+  margin: 0.25rem 0 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+  color: #d4af37;
+}
+
+.service-card p {
+  color: #dcdcdc;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin: 0 auto;
+  max-width: 260px; /* keeps text narrower for balance */
+}
+
 .service-card p,
 .project-card p {
   color: #c0c0c0;
   font-size: 0.95rem;
   margin-bottom: 1rem;
+  font-family: 'Lora', serif; 
+}
+
+.service-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 0.5rem; /* closer to title */
+  color: #d4af37;
+  filter: drop-shadow(0 0 5px rgba(212,175,55,.25));
+}
+
+.service-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.7;
 }
 
 .project-card a {
@@ -576,6 +613,15 @@ canvas#footer-constellation {
   }
 }
 
+.service-card {
+  text-align: center;
+  padding: 1.5rem 1.25rem; /* reduced vertical padding */
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .easter-egg {
   position: fixed;
   bottom: 20px;
@@ -708,12 +754,19 @@ canvas#footer-constellation {
     0 0 60px rgba(0, 240, 224, 0.1);
   animation: floatGlow 6s ease-in-out infinite;
   transition: transform 0.4s ease;
+  margin-bottom: 2rem; /* pushes text down from image */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-image img:hover {
   transform: scale(1.07);
 }
 
+.about-content p:first-of-type {
+  margin-top: 1.5rem; /* extra space between the image and the first paragraph */
+}
 /* Floating glow animation */
 @keyframes floatGlow {
   0% {
@@ -736,12 +789,22 @@ canvas#footer-constellation {
 }
 
 .about-content {
-  max-width: 830px;
-  margin: 0 auto;
-  line-height: 1.5;
+  font-family: 'Lora', serif;
   font-size: 1.2rem;
-  margin-top: 2rem;
-  /* Adds space between the text and the image */
+  line-height: 1.8;
+  color: #f5f5f5;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.15rem;        /* slightly larger than body text */
+  line-height: 1.75;         /* airy, easier to read */
+  max-width: 750px;          /* comfortable line length */
+  margin: 0 auto 1.5rem;     /* center + spacing between paragraphs */
+  color: #e0e0e0; 
+             /* softer than pure white */
 }
 
 .cta-button {
@@ -834,6 +897,15 @@ canvas#footer-constellation {
   }
 }
 
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem; /* slightly tighter than 2rem */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem; /* adds gentle breathing room inside */
+}
+
 .testimonials {
   padding: 4rem 2rem;
   background: rgba(255, 255, 255, 0.015);
@@ -879,6 +951,7 @@ canvas#footer-constellation {
   line-height: 1.6;
   color: #eaeaea;
   margin-bottom: 1rem;
+  font-family: 'Lora', serif; 
 }
 
 .testimonial-author {

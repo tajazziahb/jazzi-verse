@@ -9,7 +9,7 @@ A personal portfolio site built to showcase my skills and projects as a develope
 ---
 
 ## Live Demo  
-[Click here to view](https:jazziverse.com)  
+[Click here to view](https://jazziverse.com)  
 <!-- Replace with your actual Netlify URL -->
 
 ---

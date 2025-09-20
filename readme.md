@@ -1,7 +1,6 @@
 # JazziVerse  
 
 ![JazziVerse Banner](images/banner.png)  
-<!-- Replace with a screenshot or banner image of your site -->
 
 **Where logic orbits creativity.**  
 A personal portfolio site built to showcase my skills and projects as a developer.  
@@ -10,7 +9,6 @@ A personal portfolio site built to showcase my skills and projects as a develope
 
 ## Live Demo  
 [Click here to view](https://jazziverse.com)  
-<!-- Replace with your actual Netlify URL -->
 
 ---
 

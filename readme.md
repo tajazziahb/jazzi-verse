@@ -13,7 +13,7 @@ A personal portfolio site built to showcase my skills and projects as a develope
 ---
 
 ## Tech Stack  
-- Vue.js  
+- Vite
 - TailwindCSS + DaisyUI  
 - Supabase (PostgreSQL)  
 - Netlify (Deployment)  

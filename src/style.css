@@ -1,4 +1,3 @@
-/* ======= RESET ======= */
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +16,6 @@ body {
   position: relative;
   scroll-behavior: smooth;
 }
-
 
 body::before {
   content: "";
@@ -53,21 +51,25 @@ canvas#footer-constellation {
   background: transparent !important;
 }
 
-/* content above both */
-.hero, .services, .portfolio, .contact, .footer, .about, .navbar {
+.hero,
+.services,
+.portfolio,
+.contact,
+.footer,
+.about,
+.navbar {
   position: relative;
   z-index: 2;
 }
 
-/* --- cosmic nebula / noise layer --- */
-.bg-sky{
+.bg-sky {
   position: fixed;
   inset: 0;
-  z-index: 0;            /* below canvases, above body */
+  z-index: 0;
   pointer-events: none;
 }
 
-#constellation{
+#constellation {
   position: fixed;
   inset: 0;
   z-index: 1;
@@ -75,71 +77,85 @@ canvas#footer-constellation {
   background: transparent !important;
 }
 
-.footer{
-  position: relative;         /* create containing block */
-  overflow: hidden;           /* hide overflowed stars */
-  z-index: 3;                 /* footer content sits above page BG; children get +1 below */
+.footer {
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
 }
 
-#footer-constellation{
-  position: absolute !important; /* override earlier 'fixed' */
+#footer-constellation {
+  position: absolute !important;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;                     /* above #constellation (1), below footer text (3) */
+  z-index: 2;
   pointer-events: none;
   background: transparent !important;
 }
 
-.footer > *{
+.footer>* {
   position: relative;
   z-index: 3;
 }
 
-.hero, .services, .portfolio, .contact, .about, .navbar{
+.hero,
+.services,
+.portfolio,
+.contact,
+.about,
+.navbar {
   position: relative;
   z-index: 3;
 }
 
-
-/* soft nebula glows */
-.nebula{
+.nebula {
   position: absolute;
   width: 60vmax;
   height: 60vmax;
   border-radius: 50%;
-  filter: blur(120px); opacity: .35;
+  filter: blur(120px);
+  opacity: .35;
   opacity: .22;
   mix-blend-mode: screen;
   animation: drift 40s ease-in-out infinite alternate;
 }
 
-
-.n1{ top:-20vmax; left:-15vmax;
+.n1 {
+  top: -20vmax;
+  left: -15vmax;
   background: radial-gradient(circle at 50% 50%, #107d90 0 30%, transparent 60%);
 }
-.n2{ bottom:-15vmax; right:-10vmax; opacity:.20; animation-duration:55s;
+
+.n2 {
+  bottom: -15vmax;
+  right: -10vmax;
+  opacity: .20;
+  animation-duration: 55s;
   background: radial-gradient(circle at 50% 50%, #15ce9a 0 25%, transparent 60%);
 }
-.n3{ top:10vmax; right:35vmax; opacity:.15; animation-duration:70s;
+
+.n3 {
+  top: 10vmax;
+  right: 35vmax;
+  opacity: .15;
+  animation-duration: 70s;
   background: radial-gradient(circle at 50% 50%, #b47cff 0 20%, transparent 55%);
 }
 
-@keyframes drift{
-  to{ transform: translate3d(10px,-20px,0) scale(1.05); }
+@keyframes drift {
+  to {
+    transform: translate3d(10px, -20px, 0) scale(1.05);
+  }
 }
 
-/* ultra subtle film-grain/noise */
-.noise{
+.noise {
   position: absolute;
   inset: 0;
-  /* if you have /images/noise.png in your project root, use relative path: */
   background: url('images/noise.png') repeat;
   opacity: .05;
   mix-blend-mode: soft-light;
   background-size: 200px 200px;
 }
-
 
 .navbar {
   position: sticky;
@@ -320,7 +336,7 @@ canvas#footer-constellation {
 }
 
 .section-sub {
-  font-family: 'Lora', serif; 
+  font-family: 'Lora', serif;
 }
 
 .services,
@@ -355,8 +371,6 @@ canvas#footer-constellation {
   text-align: center;
   will-change: transform;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-
 }
 
 .service-card:hover,
@@ -385,7 +399,7 @@ canvas#footer-constellation {
   line-height: 1.5;
   font-size: 0.95rem;
   margin: 0 auto;
-  max-width: 260px; /* keeps text narrower for balance */
+  max-width: 260px;
 }
 
 .service-card p,
@@ -393,7 +407,7 @@ canvas#footer-constellation {
   color: #c0c0c0;
   font-size: 0.95rem;
   margin-bottom: 1rem;
-  font-family: 'Lora', serif; 
+  font-family: 'Lora', serif;
 }
 
 .service-icon {
@@ -401,9 +415,9 @@ canvas#footer-constellation {
   place-items: center;
   width: 42px;
   height: 42px;
-  margin: 0 auto 0.5rem; /* closer to title */
+  margin: 0 auto 0.5rem;
   color: #d4af37;
-  filter: drop-shadow(0 0 5px rgba(212,175,55,.25));
+  filter: drop-shadow(0 0 5px rgba(212, 175, 55, .25));
 }
 
 .service-icon svg {
@@ -439,6 +453,7 @@ canvas#footer-constellation {
   box-shadow: 0 0 12px rgba(0, 240, 224, 0.15);
   backdrop-filter: blur(10px);
 }
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -450,10 +465,12 @@ canvas#footer-constellation {
   color: white;
   font-family: inherit;
 }
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: #aaa;
 }
+
 .contact-form button {
   width: 100%;
   background: #00f0e0;
@@ -465,18 +482,17 @@ canvas#footer-constellation {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 .contact-form button:hover {
   background: white;
   color: #00f0e0;
 }
-
 
 @media (max-width: 768px) {
   .contact-form {
     padding: 1.5rem;
   }
 }
-
 
 .footer {
   position: relative;
@@ -552,7 +568,6 @@ canvas#footer-constellation {
   animation-delay: 1.2s;
 }
 
-/* ===== FADE-IN-UP ANIMATION ON SCROLL ===== */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
@@ -563,7 +578,6 @@ canvas#footer-constellation {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 @keyframes fadeInUp {
   from {
@@ -615,7 +629,7 @@ canvas#footer-constellation {
 
 .service-card {
   text-align: center;
-  padding: 1.5rem 1.25rem; /* reduced vertical padding */
+  padding: 1.5rem 1.25rem;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -754,7 +768,7 @@ canvas#footer-constellation {
     0 0 60px rgba(0, 240, 224, 0.1);
   animation: floatGlow 6s ease-in-out infinite;
   transition: transform 0.4s ease;
-  margin-bottom: 2rem; /* pushes text down from image */
+  margin-bottom: 2rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -765,9 +779,9 @@ canvas#footer-constellation {
 }
 
 .about-content p:first-of-type {
-  margin-top: 1.5rem; /* extra space between the image and the first paragraph */
+  margin-top: 1.5rem;
 }
-/* Floating glow animation */
+
 @keyframes floatGlow {
   0% {
     transform: translateY(0px) scale(1);
@@ -799,12 +813,11 @@ canvas#footer-constellation {
 }
 
 .about-content p {
-  font-size: 1.15rem;        /* slightly larger than body text */
-  line-height: 1.75;         /* airy, easier to read */
-  max-width: 750px;          /* comfortable line length */
-  margin: 0 auto 1.5rem;     /* center + spacing between paragraphs */
-  color: #e0e0e0; 
-             /* softer than pure white */
+  font-size: 1.15rem;
+  line-height: 1.75;
+  max-width: 750px;
+  margin: 0 auto 1.5rem;
+  color: #e0e0e0;
 }
 
 .cta-button {
@@ -819,7 +832,6 @@ canvas#footer-constellation {
   text-align: center;
   display: inline-block;
   text-decoration: none;
-  /* Removes the underline */
 }
 
 .cta-button:hover {
@@ -900,10 +912,10 @@ canvas#footer-constellation {
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.75rem; /* slightly tighter than 2rem */
+  gap: 1.75rem;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1rem; /* adds gentle breathing room inside */
+  padding: 1rem;
 }
 
 .testimonials {
@@ -951,7 +963,7 @@ canvas#footer-constellation {
   line-height: 1.6;
   color: #eaeaea;
   margin-bottom: 1rem;
-  font-family: 'Lora', serif; 
+  font-family: 'Lora', serif;
 }
 
 .testimonial-author {
@@ -976,7 +988,6 @@ canvas#footer-constellation {
   transition: all 0.3s ease-in-out;
 }
 
-/* Optional for non-Tailwind setup */
 #form-feedback {
   margin-top: 10px;
   font-size: 0.9rem;
@@ -985,7 +996,80 @@ canvas#footer-constellation {
   color: #d4af37;
 }
 
-
 #form-feedback.fade-out {
   opacity: 0;
+}
+
+#portfolio {
+  padding: 2rem 0;
+}
+
+/* tighten overall spacing */
+.project-card {
+  padding: 1rem;
+  gap: 0.75rem;
+}
+
+.project-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.project-card img {
+  height: 210px;
+  border-radius: 10px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.project-desc {
+  margin: 0.25rem 0 0;
+  text-align: center;
+  line-height: 1.5;
+  min-height: auto;
+}
+
+/* tech stack: consistent, no weird tall pills, no forced min-height */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.6rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0 0;
+}
+
+.project-card .tech-stack span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,140,50,0.5);
+  background: rgba(255,140,50,0.12);
+  color: #ffd0a6;
+  font-size: 0.82rem;
+  line-height: 1;
+  height: auto;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* button sits closer; same spot on every card */
+.project-link {
+  margin-top: 0.5rem;
+  align-self: center;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+}
+
+/* grid stays neat */
+.portfolio-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .project-card img { height: 180px; }
 }
